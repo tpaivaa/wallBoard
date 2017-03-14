@@ -1,0 +1,24 @@
+{
+  "name": "wallboard",
+  "version": "0.0.1",
+  "description": "TestWallboard",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpaivaa/wallBoard.git"
+  },
+  "author": "Tomi Hakkarainen (tpaivaa@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpaivaa/wallBoard/issues"
+  },
+  "homepage": "https://github.com/tpaivaa/wallBoard#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "require-reload": "^0.2.2"
+  }
+}
