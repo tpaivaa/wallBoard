@@ -55,6 +55,7 @@ test*.*
 *.swp
 *.tgz
 *.xml
+*.jpg
 .DS_Store
 .idea
 .project
@@ -62,8 +63,7 @@ test*.*
 .vscode
 appconfig.js
 coverage
-node_modules
 npm-debug.log
 
 #No images
-public/images/*
+public/images
