@@ -64,3 +64,6 @@ appconfig.js
 coverage
 node_modules
 npm-debug.log
+
+#No images
+public/images
