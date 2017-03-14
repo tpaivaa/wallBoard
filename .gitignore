@@ -66,4 +66,4 @@ coverage
 npm-debug.log
 
 #No images
-public/images
+public\images
