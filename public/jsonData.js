@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 
-let rdm = (amount) => {
+let rdm = function(amount) {
 	return  Math.floor((Math.random() * amount) + 1);
 }
 
@@ -30,4 +30,5 @@ let  data =  {"Asiakaspalvelu":
 				{"loggedIn":rdm(8),"notReadyResources":rdm(3),"readyResources":rdm(3),"busy":rdm(6),"waiting":rdm(11),"longestWait":rdm(10),"waitTime":rdm(10)},
 			"Istutukset":
 				{"loggedIn":rdm(8),"notReadyResources":rdm(3),"readyResources":rdm(3),"busy":rdm(6),"waiting":rdm(11),"longestWait":rdm(34),"waitTime":rdm(8)}}
+				
 module.exports = data
