@@ -44,38 +44,49 @@ img.bottom-right {
 	position: relative;
 	float: right;
 }
-li.queue {
-	text-decoration: underline;
-	font-weight: bold;
-	font-size: 20px;
-}
 
-li.agents {
-	min-width: 547px;
-	text-decoration: underline;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-li.clients {
-	min-width: 135px;
-	text-decoration: underline;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-li.active.que-data.longestWait {
-	min-width: 160px;
-}
-
-li.wait {
-	min-width: 297px;
-	text-decoration: underline;
-	font-weight: bold;
-	font-size: 20px;
-}
 .panel {
 	background-color: rgba(221, 221, 221, 1);
 	margin-right: 5px;
 	margin-left: 20px;
+}
+
+.label-pill {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem; 
+}
+.label {
+	margin-left: 3px;
+}
+
+/*css to add back colours for labels and make use of the colours*/
+.label-default {
+  background-color: #999999;
+}
+
+.label-primary {
+  background-color: #428bca;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-danger {
+  color: #333;
+  background-color: #d9534f;
+}
+
+.label-white {
+    color: #337ab7;
+    background-color: #fff;
 }

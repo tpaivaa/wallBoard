@@ -1,10 +1,9 @@
+/*jshint esversion: 6 */
 var wallboard = angular.module('wallboard', [])
 wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
-	
-	
-	
+	let styles = ['label-white', 'label-success','label-info','label-warning','label-danger'];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
 	}
@@ -32,5 +31,24 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	// Kick off the interval
 	$scope.intervalFunction();
 
-}]);
+	$scope.pillColor = function(count, wait) {
+  	
+  	if (wait === 'true') {return styles[0]}
+  	if (count < -1)
+  		style = styles[1];
+  	else if (5 <= count  && count <= 15)
+  		style = styles[3];
+  	else if (count > 15)
+  		style = styles[4];
+  	else
+  		style = styles[0];
+  	return style;
+  };
+  $scope.waitColor = (count) => {
+  	if (count > 90) { style = styles[4] }
+  	else {style = styles[0]}
+  	return style;
+  	}
+  $scope.agentPillColor = (count) => { return styles[0]}
 
+}]);

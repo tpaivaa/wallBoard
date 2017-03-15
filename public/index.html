@@ -13,7 +13,8 @@
 	<script src="js/index.js"></script>
 </head>
 <body>
-	<div ng-controller="wallCtrl">
+	<div layout="column" layout-margin layout-align="space-between center" ng-controller="wallCtrl">
+		<!---
 		<header>
 				<nav class="navbar navbar-default">
 				<div class="container">
@@ -28,26 +29,30 @@
 				</div>
 				</nav>
 		</header>
-		<div class="container" style="padding-bottom: 1px">
-			<ul class="nav nav-pills" role="tablist">
-			<li role="presentation" class="active col-xs-2 queue" ><a>Queues</a></li>
-			<li role="presentation" class="active agents" ><a>Agents</a></li>
-			<li role="presentation" class="active clients" ><a>Clients</a></li>
-			<li role="presentation" class="active wait" ><a>Wait times</a></li>
+		-->
+		<div flex style="padding-bottom: 1px">
+			<ul flex layout="row" layout-margin layout-align="space-between center" class="nav nav-pills" role="tablist">
+				<li flex="20" role="presentation" class="active queue"><a>Queues</a></li>
+				<li flex="50" role="presentation" class="active agents"><a>Agents</a></li>
+				<li flex="10" role="presentation" class="active clients"><a>Clients</a></li>
+				<li flex="30" role="presentation" class="active wait"><a>Wait times</a></li>
 			</ul>
 		</div>
-		<div class="container" ng-repeat="(key,que) in details" style="padding-bottom: 1px">
-			<ul class="nav nav-pills" role="tablist">
-				<li role="presentation" class="active col-xs-2" ><a>{{key}}</a></li>
-		  		<li role="presentation" class="active que-data"><a>Available<span class="badge">{{que.loggedIn}}</span></a></li>
-		  		<li role="presentation" class="active que-data"><a>Ready<span class="badge">{{que.readyResources}}</span></a></li>
-				<li role="presentation" class="active que-data"><a>Not Ready<span class="badge">{{que.notReadyResources}}</span></a></li>
-		  		<li role="presentation" class="active que-data"><a>Busy<span class="badge">{{que.busy}}</span></a></li>
-				<li role="presentation" class="active que-data"><a>Waiting<span class="badge">{{que.waiting}}</span></a></li>
-				<li role="presentation" class="active que-data longestWait"><a>Longest wait<span class="badge">{{que.longestWait}}</span></a></li>
-				<li role="presentation" class="active que-data"><a>Avg Wait<span class="badge">{{que.waitTime}}</span></a></li>
-		  	</ul>
-		</div>
+
+			<div class="list-group" ng-repeat="(key,que) in details" style="padding-bottom: 1px">
+				<ul layout="row" layout-margin layout-align="space-between center" class="nav nav-pills" role="tablist">
+					<li role="presentation" class="active" ><a>{{key}}</a></li>
+			  		<li role="presentation" class="active que-data"><a>Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a></li>
+			  		<li role="presentation" class="active que-data"><a>Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a></li>
+					<li role="presentation" class="active que-data"><a>Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a></li>
+			  		<li role="presentation" class="active que-data"><a>Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a></li>
+					<li role="presentation" class="active que-data"><a>Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a></li>
+					<li role="presentation" class="active que-data longestWait"><a>Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a></li>
+					<li role="presentation" class="active que-data"><a>Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a></li>
+			  	</ul>
+			</div>
+
+		<!---
 		<div class="row">
 			<div class="col-xs-4">
 			<img class="bottom-left" src="images/leftimage.jpg">
@@ -69,6 +74,7 @@
 			</div>
 			</nav>
 		</footer>
+	-->
 	</div>
 </body>
 </html>
