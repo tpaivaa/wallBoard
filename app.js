@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
 
 app.get('/wallBoardData',(req, res, next) => {
 	var jsonData = reload('./public/jsonData')
-	//log(jsonData)
+	log(jsonData)
 	res.json(jsonData)
 })
 
