@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
@@ -44,16 +44,13 @@
 				</nav>
 		</header>
 		-->
-		<div layout="row" layout-align="center center" class="btn-group btn-group-justified">
-				<div flex="5" class="btn btn-primary">Queues</div>
-				<div flex="20" class="btn btn-primary"></div>
-				<div flex="50" class="btn btn-primary">Agents</div>
-				<div flex="5" class="btn btn-primary"></div>
-				<div flex="5" class="btn btn-primary"></div>
-				<div flex="5" class="btn btn-primary">Clients</div>
-				<div flex="5" class="btn btn-primary">Wait times</div>
-				<div flex="5" class="btn btn-primary"></div>
+		<div layout="row" layout-align="center center">
+				<div flex="10" class="btn btn-primary" >Queues</div>
+				<div flex="50" class="btn btn-primary" >Agents</div>
+				<div flex="10" class="btn btn-primary">Clients</div>
+				<div flex="25" class="btn btn-primary">Wait times</div>
 		</div>
+				
 
 			<div class="btn-group btn-group-justified" ng-repeat="(key,que) in details">
 					<a class="btn btn-primary">{{key}}</a>
