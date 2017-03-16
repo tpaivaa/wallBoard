@@ -45,22 +45,22 @@
 		</header>
 		-->
 		<div layout="row" layout-align="center center">
-				<div flex="10" class="btn btn-primary" >Queues</div>
+				<div flex class="btn btn-primary" >Queues</div>
 				<div flex="50" class="btn btn-primary" >Agents</div>
-				<div flex="10" class="btn btn-primary">Clients</div>
+				<div flex class="btn btn-primary">Clients</div>
 				<div flex="25" class="btn btn-primary">Wait times</div>
 		</div>
 				
 
-			<div class="btn-group btn-group-justified" ng-repeat="(key,que) in details">
-					<a class="btn btn-primary">{{key}}</a>
-			  		<a class="btn btn-primary">Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
-			  		<a class="btn btn-primary">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
-					<a class="btn btn-primary">Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a>
-			  		<a class="btn btn-primary">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a>
-					<a class="btn btn-primary">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
-					<a class="btn btn-primary">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a>
-					<a class="btn btn-primary">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
+			<div layout="row" layout-align="center center" ng-repeat="(key,que) in details">
+					<div flex="20" class="btn btn-primary">{{key}}</div>
+			  		<a flex="20" class="btn btn-primary">Available<span flex class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
+			  		<a flex="20" class="btn btn-primary">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
+					<a flex="20" class="btn btn-primary">Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a>
+			  		<a flex="20" class="btn btn-primary">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a>
+					<a flex="20" class="btn btn-primary">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
+					<a flex="20" class="btn btn-primary">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a>
+					<a flex="20" class="btn btn-primary">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
 			</div>
 
 		<!---
