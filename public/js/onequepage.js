@@ -4,7 +4,7 @@ wallboard.service('pageContent',[ function(){
 		this.fr = {
 				headertext: 'Wallboard',
 				contactsWaiting: 'APPELS EN ATTENTE',
-				queBoxHeader: 'Glients',
+				queBoxHeader: 'Clients',
 				que:'+33388878866',
 				queAgentStatus: 'Queue Agent Status',
 				loggedIn: 'CONNECTE',

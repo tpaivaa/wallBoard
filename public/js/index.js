@@ -44,12 +44,12 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   		style = styles[0];
   	return style;
   };
-  $scope.waitColor = (count) => {
+  $scope.waitColor = function(count) {
   	if (count > 90) { style = styles[4] }
   	else {style = styles[0]}
   	return style;
   	}
-  $scope.agentPillColor = (count) => { return styles[0]}
+  $scope.agentPillColor = function(count) { return styles[0]}
 
 }]);
 
