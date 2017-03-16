@@ -33,7 +33,7 @@
 				</nav>
 		</header>
 		-->
-		<div class="row">
+		<div>
 				<div class="btn btn-primary col-xs-2">Queues</div>
 				<div class="btn btn-primary col-xs-4">Agents</div>
 				<div class="btn btn-primary col-xs-2">Clients</div>
@@ -41,7 +41,7 @@
 		</div>
 				
 
-			<div ng-repeat="(key,que) in details" class="row">
+			<div ng-repeat="(key,que) in details">
 					<div  class="btn btn-primary col-xs-2">{{key}}</div>
 			  		<a  class="btn btn-primary col-xs-1">Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
 			  		<a  class="btn btn-primary col-xs-1">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
