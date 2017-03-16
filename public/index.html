@@ -35,9 +35,9 @@
 		-->
 		<div class="container-fluid">
 				<div class="btn btn-primary col-xs-2">Queues</div>
-				<div class="btn btn-primary col-xs-5">Agents</div>
+				<div class="btn btn-primary col-xs-4">Agents</div>
 				<div class="btn btn-primary col-xs-2">Clients</div>
-				<div class="btn btn-primary col-xs-3">Wait times</div>
+				<div class="btn btn-primary col-xs-4">Wait times</div>
 		</div>
 				
 
@@ -47,9 +47,9 @@
 			  		<a  class="btn btn-primary col-xs-1">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
 					<a  class="btn btn-primary col-xs-1">Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a>
 			  		<a  class="btn btn-primary col-xs-1">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a>
-					<a  class="btn btn-primary col-xs-1">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
+					<a  class="btn btn-primary col-xs-2">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
 					<a  class="btn btn-primary col-xs-2">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a>
-					<a  class="btn btn-primary col-xs-3">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
+					<a  class="btn btn-primary col-xs-2">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
 			</div>
 
 		<!---
