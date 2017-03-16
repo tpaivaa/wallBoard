@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-var wallboard = angular.module('wallboard', ['ngMaterial','ngAnimate'])
+var wallboard = angular.module('wallboard', [])
 wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
@@ -11,7 +11,6 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		getDataURL = '/wallboardData';
 	}
 	
-
 	// Function to get the data
 	$scope.getData = function (){
 		$http.get(getDataURL)
@@ -50,5 +49,9 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   	}
   $scope.agentPillColor = function(count) { return styles[0]; }
+
+	$scope.detailsLength = function() {
+		return (100 / (Object.keys($scope.details).length+1));
+	};
 
 }]);

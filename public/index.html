@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular-animate.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-aria.min.js"></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-messages.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>-->
+  	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>-->
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.css">
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">-->
 	<!-- custom css -->
 	<link rel="stylesheet" href="styles/styles.css">
 	
@@ -19,7 +19,7 @@
 	<script src="js/index.js"></script>
 </head>
 <body>
-	<div class="container" ng-controller="wallCtrl">
+	<div class="container-fluid"  ng-controller="wallCtrl">
 		<!---
 		<header>
 				<nav class="navbar navbar-default">
@@ -36,23 +36,23 @@
 				</nav>
 		</header>
 		-->
-		<div layout="row" layout-align="center center">
-				<div flex class="btn btn-primary" >Queues</div>
-				<div flex="50" class="btn btn-primary" >Agents</div>
-				<div flex class="btn btn-primary">Clients</div>
-				<div flex="25" class="btn btn-primary">Wait times</div>
+		<div class="row" style="height:{{detailsLength()}}vh;" >
+				<div class="btn btn-primary col-xs-2" style="height: 100%" >Queues</div>
+				<div class="btn btn-primary col-xs-4" style="height: 100%" >Agents</div>
+				<div class="btn btn-primary col-xs-2" style="height: 100%" >Clients</div>
+				<div class="btn btn-primary col-xs-4" style="height: 100%" >Wait times</div>
 		</div>
 				
 
-			<div layout="row" layout-align="center center" ng-repeat="(key,que) in details">
-					<div flex class="btn btn-primary">{{key}}</div>
-			  		<a flex class="btn btn-primary">Available<span flex class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
-			  		<a flex class="btn btn-primary">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
-					<a flex class="btn btn-primary">Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a>
-			  		<a flex class="btn btn-primary">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a>
-					<a flex class="btn btn-primary">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
-					<a flex class="btn btn-primary">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a>
-					<a flex class="btn btn-primary">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
+			<div class="row" style="height:{{detailsLength()}}vh;" ng-repeat="(key, que) in details">
+					<div class="btn btn-primary col-xs-2" style="height: 100%">{{key}}</div>
+			  		<a class="btn btn-primary col-xs-1" style="height: 100%">Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
+			  		<a class="btn btn-primary col-xs-1" style="height: 100%">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
+					<a class="btn btn-primary col-xs-1" style="height: 100%">Not Ready<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></a>
+			  		<a class="btn btn-primary col-xs-1" style="height: 100%">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></a>
+					<a class="btn btn-primary col-xs-2" style="height: 100%">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></a>
+					<a class="btn btn-primary col-xs-2" style="height: 100%">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></a>
+					<a class="btn btn-primary col-xs-2" style="height: 100%">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></a>
 			</div>
 
 		<!---
