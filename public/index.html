@@ -24,22 +24,22 @@
 	<div class="container-fluid" ng-controller="wallCtrl">
 
 		<div class="row" style="height:{{detailsLength()}}vh;" >
-				<button class="btn btn-primary col-xs-3" style="height: 100%; layout-align: center center;" ><u>Queues</u></button>
-				<button class="btn btn-primary col-xs-4" style="height: 100%; layout-align: center center;" ><u>Agents</u></button>
-				<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;" ><u>Clients</u></button>
-				<button class="btn btn-primary col-xs-4" style="height: 100%; layout-align: center center;" ><u>Wait times</u></button>
+				<button class="btn btn-primary col-xs-3 jono" ><u>Queues</u></button>
+				<button class="btn btn-primary col-xs-4 jono" ><u>Agents</u></button>
+				<button class="btn btn-primary col-xs-1 jono" ><u>Clients</u></button>
+				<button class="btn btn-primary col-xs-4 jono" ><u>Wait times</u></button>
 		</div>
 				
 
 			<div class="row" style="height:{{detailsLength()}}vh;" ng-repeat="(key, que) in details">
-					<button class="btn btn-primary col-xs-3" style="height: 100%; layout-align: center center;">{{key}}</button>
-			  		<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;">Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></button>
-			  		<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></button>
-					<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;">NotReady<span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></button>
-			  		<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;">Busy<span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></button>
-					<button class="btn btn-primary col-xs-1" style="height: 100%; layout-align: center center;">Waiting<span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></button>
-					<button class="btn btn-primary col-xs-2" style="height: 100%; layout-align: center center;">Longest wait<span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></button>
-					<button class="btn btn-primary col-xs-2" style="height: 100%; layout-align: center center;">Avg Wait<span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></button>
+					<button class="btn btn-primary col-xs-3 jono" >{{key}}</button>
+			  		<button class="btn btn-primary col-xs-1" >Available<br/><span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></button>
+			  		<button class="btn btn-primary col-xs-1" >Ready<br/><span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></button>
+					<button class="btn btn-primary col-xs-1" >Not Ready<br/><span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></button>
+			  		<button class="btn btn-primary col-xs-1" >Busy<br/><span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></button>
+					<button class="btn btn-primary col-xs-1" >Waiting<br/><span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></button>
+					<button class="btn btn-primary col-xs-2" >Longest Wait<br/><span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></button>
+					<button class="btn btn-primary col-xs-2" >Avg Wait<br/><span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></button>
 			</div>
 
 		<!---

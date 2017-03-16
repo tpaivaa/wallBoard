@@ -3,18 +3,22 @@
 }
 
 html {
-  font-size: 20px;
-
-}
-
-.btn {
-  font-size: 23px;
-  font-family: "Helvetica Neue", sans-serif;
 
 }
 
 body {
   background-color: #428bca;
+}
+
+.btn {
+  font-size: 27px;
+  font-family: "Helvetica Neue", sans-serif;
+  height: 100%;
+  layout-align: center center;
+}
+
+.jono {
+  font-size: 32px;
 }
 
 .label-pill {
