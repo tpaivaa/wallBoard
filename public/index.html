@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="wallboard">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -8,10 +9,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>-->
   	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>-->
-
 	<!-- Latest compiled and minified CSS -->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">-->
+
 	<!-- custom css -->
 	<link rel="stylesheet" href="styles/styles.css">
 	
@@ -19,23 +20,9 @@
 	<script src="js/index.js"></script>
 </head>
 <body>
-	<div class="container-fluid"  ng-controller="wallCtrl">
-		<!---
-		<header>
-				<nav class="navbar navbar-default">
-				<div class="container">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="/">Wallboard</a>
-					</div>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#FI"><i class="fa fa-home"></i> FI</a></li>
-						<li><a href="#EN"><i class="fa fa-home"></i> EN</a></li>
-					</ul>
-				</div>
-				</nav>
-		</header>
-		-->
+	<div class="container-fluid" ng-controller="wallCtrl">
+
 		<div class="row" style="height:{{detailsLength()}}vh;" >
 				<div class="btn btn-primary col-xs-2" style="height: 100%" >Queues</div>
 				<div class="btn btn-primary col-xs-4" style="height: 100%" >Agents</div>
