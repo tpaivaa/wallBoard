@@ -16,7 +16,7 @@
 	<script src="js/index.js"></script>
 </head>
 <body>
-	<div class="container" ng-controller="wallCtrl">
+	<div class="container-fluid" ng-controller="wallCtrl">
 		<!---
 		<header>
 				<nav class="navbar navbar-default">
@@ -33,7 +33,7 @@
 				</nav>
 		</header>
 		-->
-		<div class="container-fluid">
+		<div class="row">
 				<div class="btn btn-primary col-xs-2">Queues</div>
 				<div class="btn btn-primary col-xs-4">Agents</div>
 				<div class="btn btn-primary col-xs-2">Clients</div>
@@ -41,7 +41,7 @@
 		</div>
 				
 
-			<div ng-repeat="(key,que) in details" class="container-fluid">
+			<div ng-repeat="(key,que) in details" class="row">
 					<div  class="btn btn-primary col-xs-2">{{key}}</div>
 			  		<a  class="btn btn-primary col-xs-1">Available<span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></a>
 			  		<a  class="btn btn-primary col-xs-1">Ready<span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></a>
