@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-var wallboard = angular.module('wallboard', ['ngMaterial','ngAnimate'])
+var wallboard = angular.module('wallboard', ['ngMaterial','ngAnimate','ngAria'])
 wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
