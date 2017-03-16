@@ -33,7 +33,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 
 	$scope.pillColor = function(count, wait) {
   	
-  	if (wait === 'true') {return styles[0]}
+  	if (wait === 'true') { return styles[0]; }
   	if (count < -1)
   		style = styles[1];
   	else if (5 <= count  && count <= 15)
