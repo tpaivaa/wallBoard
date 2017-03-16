@@ -1,9 +1,9 @@
 /*jshint esversion: 6 */
-var wallboard = angular.module('wallboard', [])
+var wallboard = angular.module('wallboard', ['ngMaterial','ngAnimate'])
 wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
-	let styles = ['label-white', 'label-success','label-info','label-warning','label-danger'];
+	var styles = ['label-white', 'label-success','label-info','label-warning','label-danger'];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
 	}
@@ -45,10 +45,10 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   };
   $scope.waitColor = function(count) {
-  	if (count > 90) { style = styles[4] }
-  	else {style = styles[0]}
+  	if (count > 90) { style = styles[4]; }
+  	else {style = styles[0];}
   	return style;
   	}
-  $scope.agentPillColor = function(count) { return styles[0]}
+  $scope.agentPillColor = function(count) { return styles[0]; }
 
 }]);
