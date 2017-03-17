@@ -51,7 +51,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   $scope.agentPillColor = function(count) { return styles[0]; }
 
 	$scope.detailsLength = function() {
-		return (100 / (Object.keys($scope.details).length+1));
+		return (100 / (Object.keys($scope.details).length+2));
 	};
 
 }]);
