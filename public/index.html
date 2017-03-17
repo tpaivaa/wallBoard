@@ -24,20 +24,20 @@
 	<div class="container-fluid" layout-align="center center" ng-controller="wallCtrl">
 
 		<div class="row" style="height:{{detailsLength()}}vh;">
-				<button class="btn btn-primary col-xs-3 jono"><u>Queues</u></button>
-				<button class="btn btn-primary col-xs-4 jono"><u>Agents</u></button>
-				<button class="btn btn-primary col-xs-1 jono"><u>Clients</u></button>
-				<button class="btn btn-primary col-xs-4 jono"><u>Wait times</u></button>
+				<button class="btn btn-primary col-xs-3 header1"><u>Queues</u></button>
+				<button class="btn btn-primary col-xs-4 header1"><u>Agents</u></button>
+				<button class="btn btn-primary col-xs-1 header1"><u>Clients</u></button>
+				<button class="btn btn-primary col-xs-4 header1"><u>Wait times</u></button>
 		</div>
 		<div class="row" style="height:{{detailsLength()}}vh;">
-				<button class="btn btn-primary col-xs-3 jono2"></button>
-				<button class="btn btn-primary col-xs-1 jono2"><b>Available</b></button>
-				<button class="btn btn-primary col-xs-1 jono2"><b>Ready</b></button>
-				<button class="btn btn-primary col-xs-1 jono2"><b>Not Ready</b></button>
-				<button class="btn btn-primary col-xs-1 jono2"><b>Busy</b></button>
-				<button class="btn btn-primary col-xs-1 jono2"><b>Waiting</b></button>
-				<button class="btn btn-primary col-xs-2 jono2"><b>Longest Wait</b></button>
-				<button class="btn btn-primary col-xs-2 jono2"><b>Average Wait</b></button>
+				<button class="btn btn-primary col-xs-3 header2"></button>
+				<button class="btn btn-primary col-xs-1 header2"><b>Available</b></button>
+				<button class="btn btn-primary col-xs-1 header2"><b>Ready</b></button>
+				<button class="btn btn-primary col-xs-1 header2"><b>Not Ready</b></button>
+				<button class="btn btn-primary col-xs-1 header2"><b>Busy</b></button>
+				<button class="btn btn-primary col-xs-1 header2"><b>Waiting</b></button>
+				<button class="btn btn-primary col-xs-2 header2"><b>Longest Wait</b></button>
+				<button class="btn btn-primary col-xs-2 header2"><b>Average Wait</b></button>
 		</div>				
 
 			<div class="row" style="height:{{detailsLength()}}vh;" ng-repeat="(key, que) in details">

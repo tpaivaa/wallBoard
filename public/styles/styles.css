@@ -23,7 +23,12 @@ body {
   font-weight: bold;
 }
 
-.jono2 {
+.header1 {
+  font-size: 1.9em;
+  font-weight: bold;
+}
+
+.header2 {
   font-size: 1.5em;
 }
 
