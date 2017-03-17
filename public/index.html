@@ -33,15 +33,15 @@
 				<button class="btn btn-primary col-xs-3"></button>
 				<button class="btn btn-primary col-xs-1"><b>Available</b></button>
 				<button class="btn btn-primary col-xs-1"><b>Ready</b></button>
-				<button class="btn btn-primary col-xs-1"><b>Not<br/> Ready</b></button>
+				<button class="btn btn-primary col-xs-1"><b>Not Ready</b></button>
 				<button class="btn btn-primary col-xs-1"><b>Busy</b></button>
 				<button class="btn btn-primary col-xs-1"><b>Waiting</b></button>
-				<button class="btn btn-primary col-xs-2"><b>Longest<br/>Wait</b></button>
-				<button class="btn btn-primary col-xs-2"><b>Average<br/>Wait</b></button>
+				<button class="btn btn-primary col-xs-2"><b>Longest Wait</b></button>
+				<button class="btn btn-primary col-xs-2"><b>Average Wait</b></button>
 		</div>				
 
 			<div class="row" style="height:{{detailsLength()}}vh;" ng-repeat="(key, que) in details">
-					<button class="btn btn-primary col-xs-3 jono"><b>{{key}}</b><br/></button>
+					<button class="btn btn-primary col-xs-3 jono"><b>{{key}}</b></button>
 			  		<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></button>
 			  		<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></button>
 					<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></button>

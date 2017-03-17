@@ -11,14 +11,14 @@ body {
 }
 
 .btn {
-  font-size: 27px;
+  font-size: 1.7em; /* 27px */
   font-family: "Helvetica Neue", sans-serif;
   height: 100%;
   layout-align: center center;
 }
 
 .jono {
-  font-size: 32px;
+  font-size: 1.7em; /* 32px*/
 }
 
 .label-pill {
@@ -28,7 +28,7 @@ body {
 }
 .label {
 	margin-left: 3px;
-  font-size: 32px;
+  font-size: 1.23em; /*30px*/
 }
 
 /*css to add back colours for labels and make use of the colours*/
@@ -61,5 +61,5 @@ body {
     /*color: #337ab7;
     background-color: #fff;*/
     color: #fff;
-    background-color: #a3b5df;  
+    background-color: #6784ca;  
 }
