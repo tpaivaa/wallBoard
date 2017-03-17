@@ -28,6 +28,7 @@ body {
 }
 .label {
 	margin-left: 3px;
+  font-size: 32px;
 }
 
 /*css to add back colours for labels and make use of the colours*/
