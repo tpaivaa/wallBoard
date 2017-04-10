@@ -3,12 +3,13 @@
 }
 
 html {
-
+cursor: none;
 }
 
 body {
   /*background-color: #428bca;*/
   background-color: #337ab7;
+  cursor: none;
 }
 
 .btn {
@@ -16,6 +17,12 @@ body {
   font-family: "Helvetica Neue", sans-serif;
   height: 100%;
   layout-align: center center;
+  
+}
+.btn:hover {
+  background-color: #337ab7;
+  cursor: none;
+  border:none;
 }
 
 .jono {
@@ -53,6 +60,7 @@ body {
   background-color: #428bca;
 }
 
+
 .label-success {
   background-color: #5cb85c;
 }
@@ -79,3 +87,4 @@ body {
 .red {
   background-color: red
 }
+
