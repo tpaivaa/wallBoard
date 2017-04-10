@@ -24,42 +24,42 @@
 	<div class="container-fluid" layout-align="center center" ng-controller="wallCtrl">
 
 		<div class="row" style="height:{{detailsLength()}}vh;">
-				<button class="btn btn-primary col-xs-3 jono"><u>Queues</u></button>
-				<button class="btn btn-primary col-xs-4 jono"><u>Agents</u></button>
-				<button class="btn btn-primary col-xs-1 jono"><u>Clients</u></button>
-				<button class="btn btn-primary col-xs-4 jono"><u>Wait times</u></button>
+				<button class="btn btn-primary col-md-3 jono"><u>{{headers.main.queue}}</u></button>
+				<button class="btn btn-primary col-md-4 jono"><u>{{headers.main.agents}}</u></button>
+				<button class="btn btn-primary col-md-1 jono"><u>{{headers.main.clients}}</u></button>
+				<button class="btn btn-primary col-md-4 jono"><u>{{headers.main.waitTimes}}</u></button>
 		</div>
 		<div class="row" style="height:{{detailsLength()}}vh;">
-				<button class="btn btn-primary col-xs-3"></button>
-				<button class="btn btn-primary col-xs-1"><b>Available</b></button>
-				<button class="btn btn-primary col-xs-1"><b>Ready</b></button>
-				<button class="btn btn-primary col-xs-1"><b>Not Ready</b></button>
-				<button class="btn btn-primary col-xs-1"><b>Busy</b></button>
-				<button class="btn btn-primary col-xs-1"><b>Waiting</b></button>
-				<button class="btn btn-primary col-xs-2"><b>Longest Wait</b></button>
-				<button class="btn btn-primary col-xs-2"><b>Average Wait</b></button>
+				<button class="btn btn-primary col-md-3">*</button>
+				<button class="btn btn-primary col-md-1"><b>{{headers.que.available}}</b></button>
+				<button class="btn btn-primary col-md-1"><b>{{headers.que.ready}}</b></button>
+				<button class="btn btn-primary col-md-1"><b>{{headers.que.notReady}}</b></button>
+				<button class="btn btn-primary col-md-1"><b>{{headers.que.busy}}</b></button>
+				<button class="btn btn-primary col-md-1"><b>{{headers.que.waiting}}</b></button>
+				<button class="btn btn-primary col-md-2"><b>{{headers.que.longestWait}}</b></button>
+				<button class="btn btn-primary col-md-2"><b>{{headers.que.avgWait}}</b></button>
 		</div>				
 
 			<div class="row" style="height:{{detailsLength()}}vh;" ng-repeat="(key, que) in details">
-					<button class="btn btn-primary col-xs-3 jono"><b>{{key}}</b></button>
-			  		<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.loggedIn)}}">{{que.loggedIn}}</span></button>
-			  		<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.readyResources)}}">{{que.readyResources}}</span></button>
-					<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{agentPillColor(que.notReadyResources)}}">{{que.notReadyResources}}</span></button>
-			  		<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{pillColor(que.busy)}}">{{que.busy}}</span></button>
-					<button class="btn btn-primary col-xs-1" ><span class="label label-pill {{pillColor(que.waiting)}}">{{que.waiting}}</span></button>
-					<button class="btn btn-primary col-xs-2" ><span class="label label-pill {{waitColor(que.longestWait, 'true')}}">{{que.longestWait}}</span></button>
-					<button class="btn btn-primary col-xs-2" ><span class="label label-pill {{waitColor(que.waitTime, 'true')}}">{{que.waitTime}}</span></button>
+					<button class="btn btn-primary col-md-3 jono"><b>{{key}}</b></button>
+			  		<button class="btn btn-primary col-md-1" ><span class="label {{agentPillColor(que.loggedIn, '' ,key)}}">{{que.loggedIn}}</span></button>
+			  		<button class="btn btn-primary col-md-1" ><span class="label {{agentPillColor(que.readyResources, '' ,key)}}">{{que.readyResources}}</span></button>
+					<button class="btn btn-primary col-md-1" ><span class="label {{agentPillColor(que.notReadyResources, '' ,key)}}">{{que.notReadyResources}}</span></button>
+			  		<button class="btn btn-primary col-md-1" ><span class="label {{pillColor(que.busy, '' ,key)}}">{{que.busy}}</span></button>
+					<button class="btn btn-primary col-md-1" ><span class="label {{pillColor(que.waiting, '' ,key)}}">{{que.waiting}}</span></button>
+					<button class="btn btn-primary col-md-2" ><span class="label {{waitColor(que.longestWait, 'true', key)}}">{{que.longestWait}}</span></button>
+					<button class="btn btn-primary col-md-2" ><span class="label {{waitColor(que.waitTime, 'true', key)}}">{{que.waitTime}}</span></button>
 			</div>
 
 		<!---
 		<div class="row">
-			<div class="col-xs-4">
+			<div class="col-md-4">
 			<img class="bottom-left" src="images/leftimage.jpg">
 			</div>
-			<div class="col-xs-4">
+			<div class="col-md-4">
 			<img class="center" src="images/centerimage.jpg">
 			</div>
-			<div class="col-xs-4">
+			<div class="col-md-4">
 			<img class="bottom-right" src="images/rightimage.jpg">
 			</div>
 		</div>
