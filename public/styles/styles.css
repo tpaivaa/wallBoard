@@ -40,8 +40,8 @@ body {
 .label {
 	margin-left: 3px;
   font-size: 1.23em; /* old 30px */
-  color: #fff;
-  background-color: #6784ca;  
+  /*color: #fff;
+  background-color: #6784ca;  */
 }
 
 /*css to add back colours for labels and make use of the colours*/
