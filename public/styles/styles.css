@@ -74,5 +74,8 @@ body {
     /*color: #337ab7;
     background-color: #fff;*/
     color: #fff;
-    background-color: #6784ca;  
+   background-color: #6784ca;
+}
+.red {
+  background-color: red
 }
