@@ -81,3 +81,69 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.labelPill = function(key) { if (key==='Varasto') { return ''} else { return 'label-pill'}  } 
 
 }]);
+
+
+wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
+
+	$scope.headersit = []	
+	$scope.headers = {}
+	$scope.headers.left = {
+		available: 'Läsnä',
+		ready: 'Valmiina',
+		notReady: 'Valmiudessa',
+		busy: 'Varattuna',
+		waiting: 'Jonottaa',
+		longestWait: 'Jonossa (s)',
+		avgWait: 'Odotusaika'
+	}
+
+
+	if ($scope.site) {
+		getDataURL = '/horData?site=' + $scope.site;
+	}
+	else {
+		getDataURL = '/horData';
+	}
+
+		// Function to get the data
+	$scope.getData = function (){
+		$http.get(getDataURL)
+		.then(function(response){
+			heds = [];
+			$scope.hordetails = response.data;
+			$scope.headersit = headersData(response.data)
+		});
+	}
+
+	// Function to replicate setInterval using $timeout service.
+	$scope.intervalFunction = function(){
+		$timeout(function() {
+			$scope.getData();
+			$scope.intervalFunction();
+		}, 15 * 1000)
+	};
+
+	// Get first data
+	$scope.getData();
+	// Kick off the interval
+	$scope.intervalFunction();
+
+	$scope.headersit = $scope.hordetails
+
+
+	var headersData = (data) => {
+		let heds = []
+		for(let n in data){
+				heds.push(n)
+			}
+		return heds
+	}
+
+
+}])
+
+
+
+angular.element(function() {
+      angular.bootstrap(document, ['wallboard']);
+    });

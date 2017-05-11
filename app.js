@@ -28,6 +28,12 @@ app.get('/wallboardData',(req, res, next) => {
 	res.json(jsonData)
 })
 
+app.get('/horData',(req, res, next) => {
+	var jsonData = reload('./public/hor')
+	res.json(jsonData)
+})
+
+
 app.listen(process.env.PORT || 3000, () => {
 	log('Running...');
 	});

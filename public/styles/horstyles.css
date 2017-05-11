@@ -1,0 +1,134 @@
+body {
+	padding: 0px 3px 5px 0px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #337ab7;
+	cursor: none;
+	border: none;
+	font-size: 1.7em; /* old 27px */
+	font-family: "Helvetica Neue", sans-serif;
+	height: 100%;
+	postion: absolute;
+	display: block;
+	word-break: break-all;
+}
+div {
+	clear:both;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.t-header-up-corner {
+	padding-right: .6em;
+	padding-left: .6em;
+	font-size: 1.3em; /* old 27px */
+	font-family: "Helvetica Neue", sans-serif;
+	height: 100%;
+	background-color: #337ab7;
+	cursor: none;
+	border: none;
+	color: black;
+}
+
+.t-header-up {
+	padding-right: .6em;
+	padding-left: .6em;
+	font-size: 1.3em; /* old 27px */
+	font-family: "Helvetica Neue", sans-serif;
+	height: 100%;
+	background-color: #337ab7;
+	cursor: none;
+	border: none;
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+	word-break: break-all;
+}
+
+.t-waiting {
+	margin: 30px 30px 3px;3px
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+    .center-block();
+}
+
+.t-longestWait {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+    .center-block();	
+}
+
+.t-avgWait {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+}
+
+.t-available {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+}
+
+.t-busy {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+}
+
+.t-ready {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+}
+
+.t-notReady {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	border-color: black;
+    background-color: grey;
+	color: black;
+    font-size:1.3em;
+}
+
+.t-waiting-left {
+	padding-right: .6em;
+	padding-left: .6em;
+	font-size: 1.7em; /* old 27px */
+	font-family: "Helvetica Neue", sans-serif;
+	height: 100%;
+	background-color: #337ab7;
+	cursor: none;
+	border:none;
+	color: white;
+}
+
+
+.t-danger {	
+	color: #333;
+	background-color: #d9534f;
+}
