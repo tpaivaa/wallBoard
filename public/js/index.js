@@ -90,7 +90,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 	$scope.headers.left = {
 		available: 'Läsnä',
 		ready: 'Valmiina',
-		notReady: 'Valmiudessa',
+		notReady: 'Vaiheessa',
 		busy: 'Varattuna',
 		waiting: 'Jonottaa',
 		longestWait: 'Jonossa (s)',
