@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="wallboard">
+<title>Wallboard</title>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!-- custom css -->
+	<link rel="stylesheet" href="styles/horstyles.css">
+	
+</head>
+<body>
+	<div  ng-controller="horCtrl">
+		<div class="row">
+			<div class="col-1 t-header-up-corner">HCR</div>
+		  <div class="col-1 t-header-up text-center" ng-repeat="(key, value) in headersit">{{value}}</div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waiting, 'waiting')}}">{{hordetails["Aspa"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Esit', hordetails['Esit'].waiting, 'waiting')}}">{{hordetails["Esit"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Ca', hordetails['Ca'].waiting, 'waiting')}}">{{hordetails["Ca"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waiting, 'waiting')}}">{{hordetails["Yrit"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waiting, 'waiting')}}">{{hordetails["Ospa"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waiting, 'waiting')}}">{{hordetails["Kuus"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('KK', hordetails['KK'].waiting, 'waiting')}}">{{hordetails["KK"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Tre', hordetails['Tre'].waiting, 'waiting')}}">{{hordetails["Tre"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('SS', hordetails['SS'].waiting, 'waiting')}}">{{hordetails["SS"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Salla', hordetails['Salla'].waiting, 'waiting')}}">{{hordetails["Salla"].waiting}}</div>
+	  		<div class="col-1 text-center t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waiting, 'waiting')}}">{{hordetails["Saimaa"].waiting}}</div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.longestWait}}</div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Aspa', hordetails['Aspa'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Aspa"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Esit', hordetails['Esit'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Esit"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Ca', hordetails['Ca'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Ca"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Yrit', hordetails['Yrit'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Yrit"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Ospa', hordetails['Ospa'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Ospa"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Kuus', hordetails['Kuus'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Kuus"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('KK', hordetails['KK'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["KK"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Tre', hordetails['Tre'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Tre"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('SS', hordetails['SS'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["SS"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Salla', hordetails['Salla'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Salla"].longestWait}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].longestWait, 'longestWait')}}"><span class="t-dataite">{{hordetails["Saimaa"].longestWait}}</span></div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.avgWait}}</div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Aspa"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Esit', hordetails['Esit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Esit"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Ca', hordetails['Ca'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ca"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Yrit"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ospa"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Kuus"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('KK', hordetails['KK'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["KK"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Tre', hordetails['Tre'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Tre"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('SS', hordetails['SS'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["SS"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Salla', hordetails['Salla'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Salla"].waitTime}}</span></div>
+	  		<div class="col-1 center-block t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Saimaa"].waitTime}}</span></div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.available}}</div>
+	  		<div class="col-1 t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Aspa"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Esit', hordetails['Esit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Esit"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ca"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Yrit"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ospa"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Kuus"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('KK', hordetails['KK'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["KK"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Tre', hordetails['Tre'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Tre"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["SS"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Salla', hordetails['Salla'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Salla"].loggedIn}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Saimaa"].loggedIn}}</span></div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.busy}}</div>
+	  		<div class="col-1 t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Aspa"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Esit', hordetails['Esit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Esit"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ca"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Yrit"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ospa"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Kuus"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('KK', hordetails['KK'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["KK"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Tre', hordetails['Tre'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Tre"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["SS"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Salla', hordetails['Salla'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Salla"].busy}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Saimaa"].busy}}</span></div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.ready}}</div>
+	  		<div class="col-1 t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Aspa"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Esit', hordetails['Esit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Esit"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ca"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Yrit"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ospa"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Kuus"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('KK', hordetails['KK'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["KK"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Tre', hordetails['Tre'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Tre"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["SS"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Salla', hordetails['Salla'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Salla"].readyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Saimaa"].readyResources}}</span></div>
+		</div>
+		<div class="row">
+	  		<div class="col-1" id="t-sidebar-left">{{headers.left.notReady}}</div>
+	  		<div class="col-1 t-datasolu {{queStatus('Aspa', hordetails['Aspa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Aspa"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Esit', hordetails['Esit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Esit"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ca"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Yrit', hordetails['Yrit'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Yrit"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ospa', hordetails['Ospa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Ospa"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Kuus', hordetails['Kuus'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Kuus"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('KK', hordetails['KK'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["KK"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Tre', hordetails['Tre'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Tre"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["SS"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Salla', hordetails['Salla'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Salla"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].waitTime, 'waitTime')}}"><span class="t-dataite">{{hordetails["Saimaa"].notReadyResources}}</span></div>
+		</div>
+	</div>
+	<script src="js/index.js"></script>
+	<!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

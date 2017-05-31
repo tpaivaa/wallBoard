@@ -4,6 +4,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.headers = {};
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
+	
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
@@ -29,7 +30,6 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		longestWait: 'Pisin',
 		avgWait: 'Keskiarvo'
 	}	
-
 	
 	// Function to get the data
 	$scope.getData = function (){
@@ -70,7 +70,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	else {style = styles[0];}
   	return style;
   	}
-  $scope.agentPillColor = function(count, wait, key) { if(key === 'Varasto') {return styles[5] } else {return styles[0]} }
+  $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
 
 	$scope.detailsLength = function() {
 		return (100 / (Object.keys($scope.details).length+2));
@@ -84,7 +84,8 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 
 
 wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', function ($scope,$http,$timeout,$location) {
-
+	var log = console.log;
+	var hcrStyles = ['t-danger', 't-headsup', 't-normal'];
 	$scope.headersit = []	
 	$scope.headers = {}
 	$scope.headers.left = {
@@ -139,6 +140,51 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		return heds
 	}
 
+	$scope.queStatus = function (que, value, type){
+		// Tsekataan onko jonon tila akuutti ja tarviiko korostaa näkymää
+		// jos on palautetaan css class jolla saa näkymään väriä
+		log('in que status:', que, value, type);
+		if (que === 'Aspa') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'Esit') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'Ca') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'Yrit') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'Ospa') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'Kuus') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+		if (que === 'KK') {
+			if(type === 'waiting' && value > 3) {
+				return hcrStyles[0];
+			}
+		}
+
+
+		// palauttaa perus sisällön
+		else { return hcrStyles[2] }
+	}
+	
 
 }])
 

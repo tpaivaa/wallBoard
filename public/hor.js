@@ -7,9 +7,9 @@ let rdm = function(amount) {
 let  data =  {"Aspa":
 				{"loggedIn":rdm(8),"notReadyResources":rdm(18) ,"readyResources":rdm(8),"busy":rdm(5),"waiting":rdm(25),"longestWait":rdm(80),"waitTime":rdm(99)},
 			"Esit":
-				{"loggedIn":rdm(8),"notReadyResources":rdm(7),"readyResources":rdm(8),"busy":rdm(89),"waiting":rdm(8),"longestWait":rdm(8),"waitTime":rdm(118)},
+				{"loggedIn":rdm(8),"notReadyResources":rdm(7),"readyResources":rdm(8),"busy":rdm(16),"waiting":rdm(8),"longestWait":rdm(8),"waitTime":rdm(118)},
 			"Ca":
-				{"loggedIn":rdm(8),"notReadyResources":rdm(3),"readyResources":rdm(100),"busy":rdm(99),"waiting":rdm(11),"longestWait":rdm(21),"waitTime":rdm(10)},
+				{"loggedIn":rdm(8),"notReadyResources":rdm(3),"readyResources":rdm(19),"busy":rdm(19),"waiting":rdm(11),"longestWait":rdm(21),"waitTime":rdm(10)},
 			"Yrit":
 				{"loggedIn":rdm(8),"notReadyResources":rdm(3),"readyResources":rdm(3),"busy":rdm(6),"waiting":rdm(11),"longestWait":rdm(16),"waitTime":rdm(10)},
 			"Ospa":
