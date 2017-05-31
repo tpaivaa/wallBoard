@@ -148,6 +148,9 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 			if(type === 'waiting' && value > 3) {
 				return hcrStyles[0];
 			}
+			if(type === 'waitTime' && value >= 30) {
+				return hcrStyles[0];
+			}
 		}
 		if (que === 'Esit') {
 			if(type === 'waiting' && value > 3) {
