@@ -56,10 +56,7 @@ span {
 	word-break: break-all;
 }
 
-.t-danger {
-
-	-moz-border-radius: 50px;
-    border-radius: 50px;	
+.t-danger {	
 	color: #333;
 	background-color: #d9534f;
 }
@@ -74,4 +71,11 @@ span {
 //	padding-left: .6em;
 	text-align: center!important;
 	font-size: 1.9em; /* old 27px */
+}
+
+.t-dangerRound {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	color: #333;
+	background-color: #d9534f;
 }
