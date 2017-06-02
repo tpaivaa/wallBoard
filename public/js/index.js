@@ -106,23 +106,9 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		getDataURL = '/horData';
 	}
 
-	var blinkHeader = function(status) {
-		var $div2blink = $("#divtoBlink"); // Save reference, only look this item up once, then save
-
-		if(status){
-			var backgroundInterval = setInterval(function(){
-			    $div2blink.toggleClass("backgroundBlink");
-			 },1000)
-		}
-		else {
-			if ($div2blink.hasClass("backgroundBlink")) {
-				$div2blink.removeClass("backgroundBlink");
-			}
-		}
-
-
-	};
-
+	$scope.headerstyle = (que) => {
+		return "myStyle={'background-color':'blue'}";
+	} 
 		// Function to get the data
 	$scope.getData = function (){
 		$http.get(getDataURL)
@@ -174,7 +160,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 				return hcrStyles[0];
 			}
 		}
-		
+
 		if (que === 'Esit') {
 			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];

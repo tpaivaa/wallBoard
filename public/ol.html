@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 	<script src="js/index.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<!-- custom css -->
@@ -16,7 +15,7 @@
 	<div  ng-controller="horCtrl">
 		<div class="row">
 			<div class="col-1 t-header-up-corner" id="divtoBlink">HCR</div>
-		  <div class="col-1 t-header-up text-center" ng-repeat="(key, value) in headersit">{{value}}</div>
+		  <div class="col-1 t-header-up text-center" ng-repeat="(key, value) in headersit" ng-style="{{headerstyle(value)}}">{{value}}</div>
 		</div>
 		<div class="row">
 	  		<div class="col-1" id="t-sidebar-left">{{headers.left.waiting}}</div>
