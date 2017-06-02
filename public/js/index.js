@@ -143,42 +143,40 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 	$scope.queStatus = function (que, value, type){
 		// Tsekataan onko jonon tila akuutti ja tarviiko korostaa näkymää
 		// jos on palautetaan css class jolla saa näkymään väriä
-		log('in que status:', que, value, type);
-		if (que === 'Aspa') {
-			if(type === 'waiting' && value > 3) {
-				return hcrStyles[0];
-			}
-			if(type === 'waitTime' && value >= 30) {
+		//log('in que status:', que, value, type);
+		log('Hodedetailit: ', que ,$scope.hordetails[que]);
+		if (que === que) {
+			if($scope.hordetails[que].waiting > 9 || $scope.hordetails[que].waitTime >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'Esit') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'Ca') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'Yrit') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'Ospa') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'Kuus') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}
 		if (que === 'KK') {
-			if(type === 'waiting' && value > 3) {
+			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
 			}
 		}

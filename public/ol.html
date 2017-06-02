@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="js/index.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<!-- custom css -->
 	<link rel="stylesheet" href="styles/horstyles.css">
@@ -104,18 +105,18 @@
 	  		<div class="col-1" id="t-sidebar-left">{{headers.left.notReady}}</div>
 	  		<div class="col-1 t-datasolu {{queStatus('Aspa', hordetails['Aspa'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Aspa"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Esit', hordetails['Esit'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Esit"].notReadyResources}}</span></div>
-	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].notReadyResources, 'wainotReadyResourcestTime')}}"><span class="t-dataite">{{hordetails["Ca"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('Ca', hordetails['Ca'].notReadyResources, 'notReadyResourcestTime')}}"><span class="t-dataite">{{hordetails["Ca"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Yrit', hordetails['Yrit'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Yrit"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Ospa', hordetails['Ospa'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Ospa"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Kuus', hordetails['Kuus'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Kuus"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('KK', hordetails['KK'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["KK"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Tre', hordetails['Tre'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Tre"].notReadyResources}}</span></div>
-	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].notReadyResources, 'wainotReadyResourcesTime')}}"><span class="t-dataite">{{hordetails["SS"].notReadyResources}}</span></div>
+	  		<div class="col-1 t-datasolu {{queStatus('SS', hordetails['SS'].notReadyResources, 'notReadyResourcesTime')}}"><span class="t-dataite">{{hordetails["SS"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Salla', hordetails['Salla'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Salla"].notReadyResources}}</span></div>
 	  		<div class="col-1 t-datasolu {{queStatus('Saimaa', hordetails['Saimaa'].notReadyResources, 'notReadyResources')}}"><span class="t-dataite">{{hordetails["Saimaa"].notReadyResources}}</span></div>
 		</div>
 	</div>
-	<script src="js/index.js"></script>
+	
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

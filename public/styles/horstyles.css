@@ -1,5 +1,8 @@
-div {
-
+html, body, .container .t-datasolu {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+	margin: 0;
 }
 span {
 //	position: absolute;
@@ -13,47 +16,48 @@ span {
 
 }
 
+.t-header-up-corner {
+	padding-left: .6em;
+	font-size: 1.9em; /* old 27px */
+	font-family: "Helvetica Neue", sans-serif;
+	height: 8.5vh;
+	color: black;
+}
+
+.t-header-up {
+	font-size: 1.9em; /* old 27px */
+	height: 8.5vh;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	font-family: "Helvetica Neue", sans-serif;
+	color: black;
+	vertical-align: middle;
+	word-break: break-all;
+}
+
 .t-dataite {
 	color: black;
-    font-size:1.9em;
+//    font-size:1.9em;
 }
 
 .t-datasolu {
+	display: block;
+	font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	color: black;
     text-align: center!important;
-//	padding-top: 5px;
-//	padding-bottom: 5px;
-	height: 12.5vh;
-	font-size: 2.1em;
+	height: auto;
+    padding: 0;
+	margin: 0;
 }
 
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.t-header-up-corner {
-	padding-left: .6em;
-	font-size: 1.9em; /* old 27px */
-	font-family: "Helvetica Neue", sans-serif;
-//	height: 100%;
-//	background-color: #337ab7;
-	cursor: none;
-	border: none;
-	color: black;
-}
-
-.t-header-up {
-	font-size: 1.9em; /* old 27px */
-	font-family: "Helvetica Neue", sans-serif;
-//	background-color: #337ab7;
-	cursor: none;
-	border: none;
-	color: black;
-	text-align: left;
-	vertical-align: middle;
-	word-break: break-all;
 }
 
 .t-danger {	
@@ -68,9 +72,13 @@ span {
 }
 
 #t-sidebar-left {
-//	padding-left: .6em;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	padding-left: .6em;
 	text-align: center!important;
 	font-size: 1.9em; /* old 27px */
+	height: 12.5vh;
 }
 
 .t-dangerRound {
