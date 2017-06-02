@@ -22,7 +22,19 @@ span {
 	font-family: "Helvetica Neue", sans-serif;
 	height: 8.5vh;
 	color: black;
+
 }
+
+.backgroundBlink{
+    background: #F00;
+}
+
+#divtoBlink{
+    -webkit-transition: background 1.0s ease-in-out;
+    -ms-transition:     background 1.0s ease-in-out;
+    transition:         background 1.0s ease-in-out;
+}
+
 
 .t-header-up {
 	font-size: 1.9em; /* old 27px */

@@ -106,6 +106,23 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		getDataURL = '/horData';
 	}
 
+	var blinkHeader = function(status) {
+		var $div2blink = $("#divtoBlink"); // Save reference, only look this item up once, then save
+
+		if(status){
+			var backgroundInterval = setInterval(function(){
+			    $div2blink.toggleClass("backgroundBlink");
+			 },1000)
+		}
+		else {
+			if ($div2blink.hasClass("backgroundBlink")) {
+				$div2blink.removeClass("backgroundBlink");
+			}
+		}
+
+
+	};
+
 		// Function to get the data
 	$scope.getData = function (){
 		$http.get(getDataURL)
@@ -145,11 +162,19 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		// jos on palautetaan css class jolla saa näkymään väriä
 		//log('in que status:', que, value, type);
 		log('Hodedetailit: ', que ,$scope.hordetails[que]);
-		if (que === que) {
+		if (que === 'Aspa') {
 			if($scope.hordetails[que].waiting > 9 || $scope.hordetails[que].waitTime >= 80) {
+				blinkHeader(true);
 				return hcrStyles[0];
 			}
 		}
+		else if (que === que) {
+			if($scope.hordetails[que].waiting > 9 || $scope.hordetails[que].waitTime >= 80) {
+				//blinkHeader(true);
+				return hcrStyles[0];
+			}
+		}
+		
 		if (que === 'Esit') {
 			if(type === 'waiting' && value > 9 || type === 'waitTime' && value >= 80) {
 				return hcrStyles[0];
@@ -181,9 +206,10 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 			}
 		}
 
-
 		// palauttaa perus sisällön
-		else { return hcrStyles[2] }
+		else { 
+			blinkHeader(false);
+			return hcrStyles[2] }
 	}
 	
 
