@@ -25,6 +25,7 @@ td#left {
 }
 
 td#data {
+	align-content: center;
 	width: 7%;
 }
 
