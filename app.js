@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/wallboardData',(req, res, next) => {
-	var jsonData = reload('./public/jsonData')
+	var jsonData = reload('./public/wallboardData')
 	res.json(jsonData)
 })
 
