@@ -125,7 +125,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 	}
 	$scope.border = 1
 
-	var blinkHeader = (value) => {
+	var blinkHeader = function(value) {
 		if (value) {
 			$scope.myStyle = {'background-color':'green'}
 		}
@@ -143,7 +143,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		getDataURL = '/horData';
 	}
 
-	$scope.headerstyle = (que) => {
+	$scope.headerstyle = function(que) {
 		return 'myStyle';
 	} 
 		// Function to get the data
@@ -172,7 +172,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 	$scope.headersit = $scope.hordetails
 
 
-	var headersData = (data) => {
+	var headersData = function (data) {
 		let heds = []
 		for(let n in data){
 				heds.push(n)
