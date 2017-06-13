@@ -1,0 +1,120 @@
+
+<html ng-app="wallboard">
+<title>Wallboard</title>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="js/index.js"></script>
+	<!-- custom css -->
+	<link rel="stylesheet" href="styles/wallboard.css">
+	
+</head>
+
+<table ng-controller="wallCtrl" ng-style={{tablestyle()}} border={{border}}>
+	<tbody>
+		<tr id="header">
+			<td id="corner"><img src="http://www.holidayclubresorts.com/static/img/header_logo.jpg">&nbsp;</td>
+			<td id="header"  ng-repeat="(key, value) in headersit" ng-style="{{headerstyle(value)}}">{{value}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.waiting}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Esit"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Ca"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].waiting}}&nbsp;</td>
+			<td id="data">{{details["KK"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Tre"].waiting}}&nbsp;</td>
+			<td id="data">{{details["SS"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Salla"].waiting}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].waiting}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.longestWait}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Esit"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Ca"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["KK"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Tre"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["SS"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Salla"].longestWait}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].longestWait}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.avgWait}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Esit"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Ca"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["KK"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Tre"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["SS"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Salla"].waitTime}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].waitTime}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.available}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Esit"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Ca"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["KK"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Tre"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["SS"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Salla"].loggedIn}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].loggedIn}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.busy}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].busy}}&nbsp;</td>
+			<td id="data">{{details["Esit"].busy}}&nbsp;</td>
+			<td id="data">{{details["Ca"].busy}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].busy}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].busy}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].busy}}&nbsp;</td>
+			<td id="data">{{details["KK"].busy}}&nbsp;</td>
+			<td id="data">{{details["Tre"].busy}}&nbsp;</td>
+			<td id="data">{{details["SS"].busy}}&nbsp;</td>
+			<td id="data">{{details["Salla"].busy}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].busy}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.ready}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Esit"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Ca"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["KK"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Tre"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["SS"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Salla"].readyResources}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].readyResources}}&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="left">{{headers.left.notReady}}&nbsp;</td>
+			<td id="data">{{details["Aspa"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Esit"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Ca"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Yrit"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Ospa"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Kuus"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["KK"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Tre"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["SS"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Salla"].notReadyResources}}&nbsp;</td>
+			<td id="data">{{details["Saimaa"].notReadyResources}}&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</html>
