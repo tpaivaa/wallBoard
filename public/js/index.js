@@ -29,12 +29,38 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		waiting: 'Jonossa',
 		longestWait: 'Pisin',
 		avgWait: 'Keskiarvo'
-	}	
+	}
+
+	$scope.headers.left = {
+		available: 'Läsnä',
+		ready: 'Valmiina',
+		notReady: 'Vaiheessa',
+		busy: 'Varattuna',
+		waiting: 'Jonottaa',
+		longestWait: 'Jonossa (s)',
+		avgWait: 'Odotusaika'
+	}
+
+	$scope.headersit = [
+		"Aspa",
+		"Esit",
+		"Ca",
+		"Yrit",
+		"Ospa",
+		"Kuus",
+		"KK",
+		"Tre",
+		"SS",
+		"Salla",
+		"Saimaa"
+	]
 	
 	// Function to get the data
 	$scope.getData = function (){
 		$http.get(getDataURL)
-		.then(function(response){ $scope.details = response.data; });
+		.then(function(response){ 
+			$scope.details = response.data;
+		});
 	}
 
 	// Function to replicate setInterval using $timeout service.
@@ -97,7 +123,18 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 		longestWait: 'Jonossa (s)',
 		avgWait: 'Odotusaika'
 	}
+	$scope.border = 1
 
+	var blinkHeader = (value) => {
+		if (value) {
+			$scope.myStyle = {'background-color':'green'}
+		}
+		else {
+			$scope.myStyle = {'background-color':'red'}
+		}
+	}
+
+	$scope.myStyle = {'background-color':'white'};
 
 	if ($scope.site) {
 		getDataURL = '/horData?site=' + $scope.site;
@@ -107,7 +144,7 @@ wallboard.controller('horCtrl', ['$scope','$http','$timeout','$location', functi
 	}
 
 	$scope.headerstyle = (que) => {
-		return "myStyle={'background-color':'blue'}";
+		return 'myStyle';
 	} 
 		// Function to get the data
 	$scope.getData = function (){
