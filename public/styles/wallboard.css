@@ -32,3 +32,8 @@ td#data {
 tr {
 	height: 10%;
 }
+
+td {
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+}
