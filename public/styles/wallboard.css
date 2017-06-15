@@ -34,6 +34,6 @@ tr {
 }
 
 td {
-	-moz-border-radius: 33px;
-    border-radius: 44px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
 }
