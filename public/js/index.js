@@ -5,10 +5,8 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
 	$scope.waitColorAsiakaspalvelu = {'background-color':'white'};
-	var waitColorRed = {'background-color':'red'};
-	var waitColorWhite = {'background-color':'white'};
 
-	var styles1 = ["{'background-color':'white'}","{'background-color':'red'}"];
+	var styles1 = ["background-color:white;","background-color: red;"];
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
@@ -65,7 +63,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			if (response.data["Asiakaspalvelu"].waiting > 4) {$scope.waitColorAsiakaspalvelu = waitColorRed;} else {$scope.waitColorAsiakaspalvelu = waitColorWhite}
+			if (response.data["Asiakaspalvelu"].waiting > 4) {} else {}
 		});
 	}
 
@@ -105,7 +103,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   $scope.waitColor1 = function(queue) {
     if ($scope.details !== 'undefined') {
   	  if ($scope.details[queue].waiting > 4) {
-  		  $scope.waitColorAsiakaspalvelu =  styles1[1];
+  		  return styles1[1];
   	  }
   	}
   };
