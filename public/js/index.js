@@ -6,7 +6,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.site = location.search.split('site=')[1];
 	$scope.waitColorAsiakaspalvelu = {'background-color':'white'};
 	var waitColorRed = {'background-color':'red'};
-	var waitColorRed = {'background-color':'white'};
+	var waitColorWhite = {'background-color':'white'};
 
 	var styles1 = ["{'background-color':'white'}","{'background-color':'red'}"];
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
