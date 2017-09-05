@@ -5,7 +5,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
 	
-	var styles1 = ["{'background-color':'white'}","style=background-color: red;"];
+	var styles1 = ["{'background-color':'white'}","background-color: red;"];
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
