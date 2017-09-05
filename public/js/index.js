@@ -27,7 +27,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		ready: 'Valmiina',
 		notReady: 'Poissa',
 		busy: 'Varattuna',
-		waiting: 'Jonossa',
+		waiting: 'Jonossa',	
 		longestWait: 'Pisin',
 		avgWait: 'Keskiarvo'
 	}
