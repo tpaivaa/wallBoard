@@ -103,6 +103,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 			return styles1[1];
 			console.log(styles1[1])
 		}
+	else if (queue === 1) {return styles1[1]; console.log(styles1[1]);}
   	else {
   		return styles1[0];
   		console.log(styles1[0])
