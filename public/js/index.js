@@ -69,12 +69,14 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.intervalFunction = function(){
 		$timeout(function() {
 			$scope.getData();
+			$scope.waitColor1();
 			$scope.intervalFunction();
 		}, 15 * 1000)
 	};
 
 	// Get first data
 	$scope.getData();
+	$scope.waitColor1();
 	// Kick off the interval
 	$scope.intervalFunction();
 
@@ -98,16 +100,18 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	else {style = styles[0];}
   	return style;
   	}
-  $scope.waitColor1 = function(queue) {
-	if (details[queue].waiting > 4 ) {
-			return styles1[1];
-			console.log(styles1[1])
+  $scope.waitColor1 = function() {
+  	$scope.details.forEach(function(n) {
+  	  if(details[n].waiting > 4) {
+  	    if (details[n] === 'Asiakaspalvelu') {
+		  $scope.waitColorAsiakaspalvelu = styles1[1];
 		}
-  	else {
-  		return styles1[0];
-  		console.log(styles1[0])
-  	}
-  	};
+		if (details[n] === 'Esittely') {
+		  $scope.waitColorAsiakaspalvelu = styles1[1];
+		}
+      }
+  	});
+  };
   $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
 
 	$scope.detailsLength = function() {
