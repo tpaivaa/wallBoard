@@ -99,8 +99,14 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   	}
   $scope.waitColor1 = function(queue) {
-	if (details[queue].waiting > 4 ) {return styles1[1]; }
-  	else {return styles1[0];}
+	if (details[queue].waiting > 4 ) {
+			return styles1[1];
+			console.log(styles1[1])
+		}
+  	else {
+  		return styles1[0];
+  		console.log(styles1[0])
+  	}
   	};
   $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
 
