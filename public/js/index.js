@@ -5,6 +5,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
 	
+	var styles1 = ['white','red'];
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
 	if ($scope.site) {
 		getDataURL = '/wallboardData?site=' + $scope.site;
@@ -38,7 +39,8 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		busy: 'Varattuna',
 		waiting: 'Jonottaa',
 		longestWait: 'Jonossa (s)',
-		avgWait: 'Odotusaika'
+		avgWait: 'Odotusaika',
+		currentWait: 'Jonotusaika'
 	}
 
 	$scope.headersit = [
@@ -96,6 +98,10 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	else {style = styles[0];}
   	return style;
   	}
+  $scope.waitColor1 = function(queue) {
+	if (details[queue].waiting > 4 ) {return styles1[1]; }
+  	else {return styles1[0];}
+  	};
   $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
 
 	$scope.detailsLength = function() {
