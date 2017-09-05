@@ -62,7 +62,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			$scope.waitColorAsiakaspalvelu = styles1[1];
+			$scope.waitColor1();
 		});
 	}
 
@@ -99,9 +99,11 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	else {style = styles[0];}
   	return style;
   	}
-  $scope.waitColor1 = function(queue) {
+  $scope.waitColor1 = function() {
   	if (details[queue].waiting > 4) {
-  		return styles1[1];
+  		if (details[queue] === 'Asiakaspalvelu') {
+  		  $scope.waitColorAsiakaspalvelu = styles1[1];
+  		}
   	}
   };
   $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
