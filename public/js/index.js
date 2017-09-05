@@ -4,7 +4,8 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.headers = {};
 	$scope.details = {};
 	$scope.site = location.search.split('site=')[1];
-	
+	$scope.waitColorAsiakaspalvelu = {"background-color":"red"};
+
 	var styles1 = ["{'background-color':'white'}","{'background-color':'red'}"];
 	var styles = ['label-pill label-white', 'label-pill  label-success',' label-pill label-info',' label-pill label-warning','label-pill label-danger', ''];
 	if ($scope.site) {
@@ -62,7 +63,6 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			$scope.waitColorAsiakaspalvelu =  styles1[1];
 		});
 	}
 
