@@ -62,6 +62,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
+			$scope.waitColorAsiakaspalvelu =  styles1[1];
 		});
 	}
 
@@ -99,7 +100,6 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   	}
   $scope.waitColor1 = function(queue) {
-  	$scope.waitColorAsiakaspalvelu =  styles1[1];
     if ($scope.details !== 'undefined') {
   	  if ($scope.details[queue].waiting > 4) {
   		  $scope.waitColorAsiakaspalvelu =  styles1[1];
