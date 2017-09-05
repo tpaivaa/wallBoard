@@ -99,11 +99,12 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   	}
   $scope.waitColor1 = function(queue) {
-  	console.log($scope.details[queue])
-  	if ($scope.details[queue].waiting > 4) {
-  		if ($scope.details[queue] === 'Asiakaspalvelu') {
+    if ($scope.details !== 'undefined') {
+  	  if ($scope.details[queue].waiting > 4) {
+  	    if ($scope.details[queue] === 'Asiakaspalvelu') {
   		  $scope.waitColorAsiakaspalvelu = styles1[1];
   		}
+  	  }
   	}
   };
   $scope.agentPillColor = function(count, wait, key) { if (key === 'Varasto') {return styles[5] } else {return styles[0]} }
