@@ -62,7 +62,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			$scope.waitColor1();
+			$scope.waitColor1($scope);
 		});
 	}
 
@@ -99,9 +99,10 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	else {style = styles[0];}
   	return style;
   	}
-  $scope.waitColor1 = function() {
-  	if (details[queue].waiting > 4) {
-  		if (details[queue] === 'Asiakaspalvelu') {
+  $scope.waitColor1 = function(scope) {
+  	console.log('waitColor1')
+  	if (scope.details[queue].waiting > 4) {
+  		if (scope.details[queue] === 'Asiakaspalvelu') {
   		  $scope.waitColorAsiakaspalvelu = styles1[1];
   		}
   	}
