@@ -62,7 +62,6 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			$scope.waitColor1($scope);
 		});
 	}
 
