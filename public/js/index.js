@@ -72,7 +72,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$timeout(function() {
 			$scope.getData();
 			$scope.intervalFunction();
-		}, 15 * 1000)
+		}, 1 * 1000)
 	};
 
 	// Get first data
