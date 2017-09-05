@@ -99,11 +99,11 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
   	return style;
   	}
   $scope.waitColor1 = function(queue) {
-  	console.log(queue);
+  	return styles1[1];
     if ($scope.details !== 'undefined') {
   	  if ($scope.details[queue].waiting > 4) {
   	    if ($scope.details[queue] === 'Asiakaspalvelu') {
-  		  $scope.waitColorAsiakaspalvelu = styles1[1];
+  		  return styles1[1];
   		}
   	  }
   	}
