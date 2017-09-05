@@ -69,14 +69,12 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	$scope.intervalFunction = function(){
 		$timeout(function() {
 			$scope.getData();
-			$scope.waitColor1();
 			$scope.intervalFunction();
 		}, 15 * 1000)
 	};
 
 	// Get first data
 	$scope.getData();
-	$scope.waitColor1();
 	// Kick off the interval
 	$scope.intervalFunction();
 
