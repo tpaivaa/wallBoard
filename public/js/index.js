@@ -63,7 +63,7 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		$http.get(getDataURL)
 		.then(function(response){ 
 			$scope.details = response.data;
-			if (response.data["Asiakaspalvelu"].waiting > 4) {$scope.waitColorAsiakaspalvelu = {"background-color":"red"};}
+			if (response.data["Asiakaspalvelu"].waiting > 4) {$scope.waitColorAsiakaspalvelu = {'background-color':'red'};} else {$scope.waitColorAsiakaspalvelu = {'background-color':'white'}}
 		});
 	}
 
