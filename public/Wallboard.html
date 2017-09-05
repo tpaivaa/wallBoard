@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 			<td id="left" >{{headers.left.currentWait}}&nbsp;</td>
-			<td id="data" >{{details["Asiakaspalvelu"].currentWait}}&nbsp;</td>
+			<td id="data" ng-class='waitColor1("Asiakaspalvelu")'>{{details["Asiakaspalvelu"].currentWait}}&nbsp;</td>
 			<td id="data" >{{details["Esittely"].currentWait}}&nbsp;</td>
 			<td id="data" >{{details["Yritys"].currentWait}}&nbsp;</td>
 			<td id="data" >{{details["Osakaspalvelu"].currentWait}}&nbsp;</td>
@@ -47,7 +47,7 @@
 		</tr>
 		<tr>
 			<td id="left">{{headers.left.available}}&nbsp;</td>
-			<td id="data" >{{details["Asiakaspalvelu"].loggedIn}}&nbsp;</td>
+			<td id="data" ng-class='waitColor1("Asiakaspalvelu")'>{{details["Asiakaspalvelu"].loggedIn}}&nbsp;</td>
 			<td id="data" >{{details["Esittely"].loggedIn}}&nbsp;</td>
 			<td id="data" >{{details["Yritys"].loggedIn}}&nbsp;</td>
 			<td id="data" >{{details["Osakaspalvelu"].loggedIn}}&nbsp;</td>
@@ -61,7 +61,7 @@
 		</tr>
 		<tr>
 			<td id="left">{{headers.left.busy}}&nbsp;</td>
-			<td id="data" >{{details["Asiakaspalvelu"].busy}}&nbsp;</td>
+			<td id="data" ng-class='waitColor1("Asiakaspalvelu")'>{{details["Asiakaspalvelu"].busy}}&nbsp;</td>
 			<td id="data" >{{details["Esittely"].busy}}&nbsp;</td>
 			<td id="data" >{{details["Yritys"].busy}}&nbsp;</td>
 			<td id="data" >{{details["Osakaspalvelu"].busy}}&nbsp;</td>
@@ -75,7 +75,7 @@
 		</tr>
 		<tr>
 			<td id="left">{{headers.left.ready}}&nbsp;</td>
-			<td id="data" >{{details["Asiakaspalvelu"].readyResources}}&nbsp;</td>
+			<td id="data" ng-class='waitColor1("Asiakaspalvelu")'>{{details["Asiakaspalvelu"].readyResources}}&nbsp;</td>
 			<td id="data" >{{details["Esittely"].readyResources}}&nbsp;</td>
 			<td id="data" >{{details["Yritys"].readyResources}}&nbsp;</td>
 			<td id="data" >{{details["Osakaspalvelu"].readyResources}}&nbsp;</td>
@@ -89,7 +89,7 @@
 		</tr>
 		<tr>
 			<td id="left">{{headers.left.notReady}}&nbsp;</td>
-			<td id="data" >{{details["Asiakaspalvelu"].notReadyResources}}&nbsp;</td>
+			<td id="data" ng-class='waitColor1("Asiakaspalvelu")'>{{details["Asiakaspalvelu"].notReadyResources}}&nbsp;</td>
 			<td id="data" >{{details["Esittely"].notReadyResources}}&nbsp;</td>
 			<td id="data" >{{details["Yritys"].notReadyResources}}&nbsp;</td>
 			<td id="data" >{{details["Osakaspalvelu"].notReadyResources}}&nbsp;</td>
