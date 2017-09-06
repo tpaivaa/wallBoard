@@ -50,11 +50,11 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 		"Stadi",
 		"Rakki",
 		"Pyynikki",
-		"Olvi",
+		"IPA",
 		"Maku",
 		"Aarni",
 		"Keisari",
-		"Salla",
+		"Laitila",
 		"Saimaa"
 	]
 	
