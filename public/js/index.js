@@ -45,16 +45,16 @@ wallboard.controller('wallCtrl', ['$scope','$http','$timeout','$location', funct
 	}
 
 	$scope.headersit = [
-		"apa",
-		"ESB",
-		"Stadi",
-		"Rakki",
-		"Pyynikki",
-		"IPA",
-		"Maku",
-		"Aarni",
-		"Keisari",
-		"Kukko",
+		"Aspa",
+		"Esit",
+		"Ca",
+		"Yrit",
+		"Ospa",
+		"Kuus",
+		"KK",
+		"Tre",
+		"SS",
+		"Salla",
 		"Saimaa"
 	]
 	
